@@ -1,5 +1,7 @@
-module.exports = {
-  transform: {
-    '^.+\\.jsx?$': 'babel-jest',
-  },
-};
+export default {
+    testEnvironment: 'node',
+    transform: {
+      '^.+\\.jsx?$': 'babel-jest',
+    },
+  };
+  
