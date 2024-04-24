@@ -1,25 +1,90 @@
 # Learning_react
 A React application that calls a public open API and displays the retrieved data in a component
 
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description 
 
-## Available Scripts
+This project is a simple web application that displays a list of posts fetched from an API. It demonstrates the use of React components, state management with hooks (useState), side effects with useEffect, asynchronous data fetching with Axios, and unit testing with Jest and React Testing Library.
 
-In the project directory, which you can access on the command line via 'cd learning-task' first run:
+
+## Installation
+
+1. Clone the repository:
+
+### `git clone <repository_url> `
+
+2. Navigate to the project directory:
+
+### `cd <project_directory> `
+
+3. Install dependencies:
 
 ### `npm install`
 
+
+
+## Usage
+
+1. Start the development server:
+
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+2. Open the browser and navigate to `http://localhost:3000` to view the application.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+
+## Testing
+
+To run unit tests, execute the following command:
 
 ### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+
+## Folder Structure
+
+```
+project/
+│
+├── src/
+│   ├── components/            # Contains React components
+│   │   └── PostList.js        # Main component to display posts
+│   ├── test/                  # Contains unit tests
+│   │   └── PostList.test.js   # Unit tests for PostList component
+│   ├── App.css                # CSS styles for the application
+│   ├── App.js                 # Main application component
+│   ├── index.css              # Global CSS styles
+│   └── index.js               # Entry point of the application
+│
+├── .gitignore                 # Specifies intentionally untracked files to ignore
+├── package.json               # Project metadata and dependencies
+├── README.md                  # Project documentation
+└── ...                        # Other project files and folders
+```
+
+
+
+## Contributing
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature/your-feature`).
+3. Make changes and commit them (`git commit -am 'Add some feature'`).
+4. Push to the branch (`git push origin feature/your-feature`).
+5. Create a new Pull Request.
+
+
+
+
+## Author
+
+[Ejuonee](https://github.com/Ejuonee)
+
+
+
+## Acknowledgements
+
+- [React](https://reactjs.org/)
+- [Axios](https://axios-http.com/)
+- [Jest](https://jestjs.io/)
+- [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
+- [Create React App](https://create-react-app.dev/)
+
