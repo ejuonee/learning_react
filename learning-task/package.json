@@ -44,7 +44,7 @@
   },
   "jest": {
     "testMatch": [
-      "<rootDir>/src/test/**/*.test.js"
+      "<rootDir>/src/test/**/*PostList.test.js"
     ]
   }
 }

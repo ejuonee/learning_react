@@ -1,16 +1,39 @@
-jest.mock('node-fetch');
+import React from 'react';
+import { render, waitFor } from '@testing-library/react';
+import axios from 'axios';
+import PostList from '../components/PostList'; 
+jest.mock('axios');
 
-const fetch = require('node-fetch');
+describe('PostList Component', () => {
+  it('renders loading message while fetching data', async () => {
+    axios.get.mockResolvedValueOnce({ data: [] }); // Mock API response with empty array
+    const { getByText } = render(<PostList />);
+    expect(getByText('Loading...')).toBeInTheDocument();
+    await waitFor(() => {
+      expect(getByText('Posts')).toBeInTheDocument();
+    });
+  });
 
-describe('API Endpoint', () => {
-  it('returns a 200 status code', async () => {
-    // Mocking the fetch function to return a resolved promise with a status of 200
-    fetch.mockResolvedValue({ status: 200 });
+  it('renders error message if API call fails', async () => {
+    axios.get.mockRejectedValueOnce(new Error('API Error')); // Mock API call failure
+    const { getByText } = render(<PostList />);
+    await waitFor(() => {
+      expect(getByText('Error: API Error')).toBeInTheDocument();
+    });
+  });
 
-    // Calling the fetch function with a mocked URL
-    const response = await fetch('https://jsonplaceholder.typicode.com/posts');
-
-    // Expecting the response status to be 200
-    expect(response.status).toBe(200);
+  it('renders posts when API call succeeds', async () => {
+    const mockData = [
+      { id: 1, title: 'Post 1', body: 'Body of Post 1' },
+      { id: 2, title: 'Post 2', body: 'Body of Post 2' },
+    ];
+    axios.get.mockResolvedValueOnce({ data: mockData }); // Mock API response with sample data
+    const { getByText } = render(<PostList />);
+    await waitFor(() => {
+      expect(getByText('Post 1')).toBeInTheDocument();
+      expect(getByText('Body of Post 1')).toBeInTheDocument();
+      expect(getByText('Post 2')).toBeInTheDocument();
+      expect(getByText('Body of Post 2')).toBeInTheDocument();
+    });
   });
 });
