@@ -43,8 +43,13 @@
     "node-fetch": "^2.7.0"
   },
   "jest": {
-    "testMatch": [
-      "<rootDir>/src/test/**/*PostList.test.js"
-    ]
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest"
+    },
+    "moduleNameMapper": {
+      "^axios$": "axios/dist/node/axios.cjs"
+    }
   }
+  
+
 }
