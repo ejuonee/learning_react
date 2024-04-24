@@ -11,11 +11,11 @@ This project is a simple web application that displays a list of posts fetched f
 
 1. Clone the repository:
 
-### `git clone <learning_react> `
+### `git clone learning_react `
 
 2. Navigate to the project directory:
 
-### `cd <learning-task> `
+### `cd learning-task `
 
 3. Install dependencies:
 
